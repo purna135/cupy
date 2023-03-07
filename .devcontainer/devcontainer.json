@@ -1,0 +1,21 @@
+{
+  "name": "CuPy Codespace",
+  "image": "mcr.microsoft.com/vscode/devcontainers/python:3.9",
+  "features": {
+    "ghcr.io/devcontainers/features/nvidia-cuda:1": {
+      "installCudnn": true
+    },
+    "github-cli": true,
+    "jupyter-notebook": true,
+    "cuda": true
+  },
+  "settings": {
+    "terminal.integrated.defaultProfile.linux": "/bin/bash"
+  },
+  "forwardPorts": [8888],
+  "postCreateCommand": [
+    "/bin/bash",
+    "-c",
+    ". /usr/local/share/nvm/nvm.sh && nvm install lts/*"
+  ]
+}
